@@ -1,0 +1,12 @@
+q4m() {
+  # see Dockerfile
+  mv "/tmp/q4m" "storage/q4m"
+}
+
+q4m_after() {
+  local build_path="$(abs_dirname)"
+  cp "${build_path}/storage/q4m/support-files/install.sql" "${PREFIX_PATH}/support-files/install-q4m.sql"
+}
+
+before_build "q4m"
+after_build "q4m_after"
