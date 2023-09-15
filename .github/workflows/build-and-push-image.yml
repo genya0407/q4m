@@ -55,5 +55,5 @@ jobs:
           push: true
           build-args: MYSQL_VERSION=${{ matrix.mysql_version }}
           platforms: ${{ matrix.platform }}
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.mysql_version }}-${{ github.sha }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.mysql_version }}-${{ matrix.platform }}-${{ github.sha }}
           labels: ${{ steps.meta.outputs.labels }}
